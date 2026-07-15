@@ -1,0 +1,37 @@
+# Ruff config enforcing the mechanically-checkable coding-standards rules for
+# Python. Drop this at the repo root (or merge into an existing ruff config) and
+# run `ruff check .`. The exact 50-line / 250-line limits are enforced by
+# scripts/check.py instead, since ruff measures statements rather than raw lines
+# — see linting/SKILL.md for the full rule-to-standard mapping.
+
+line-length = 100          # used by the formatter only; the E501 line-length lint is disabled below
+target-version = "py39"
+
+[lint]
+select = [
+    "E", "F", "W",   # pycodestyle + pyflakes baseline (includes E722 bare-except)
+    "N",             # pep8-naming: snake_case funcs/vars, PascalCase classes -> rule 4
+    "D",             # pydocstyle: docstrings present on modules + functions -> rules 5, 6
+    "B",             # flake8-bugbear: likely bugs
+    "BLE",           # flake8-blind-except: no `except Exception:` catch-alls -> rule 7
+    "PLR0913",       # too many arguments -> "few parameters (<=5)"
+    "PLR0915",       # too many statements (function-size proxy) -> rule 1
+    "PLR0912",       # too many branches
+    "PLR2004",       # magic value in comparison -> rule 11 (partial)
+    "C90",           # mccabe complexity (nesting/branching proxy) -> "shallow nesting"
+    "SIM",           # flake8-simplify: flatten needless nesting
+]
+# Presence of docstrings is enforced; their *content* (what/how/inputs/outputs)
+# is a judgment call left to the skill, not the linter.
+ignore = ["D203", "D213", "E501"]  # D203/D213: mutually-exclusive pydocstyle rules; E501: line length not enforced
+
+[lint.pydocstyle]
+convention = "google"      # matches the Args:/Returns: docstring shape the standard uses
+
+[lint.pylint]
+max-args = 5               # rule: group extra params into an object/struct
+max-statements = 50        # rule 1, expressed in statements
+max-branches = 12
+
+[lint.mccabe]
+max-complexity = 8         # high complexity usually means deep nesting / too many jobs

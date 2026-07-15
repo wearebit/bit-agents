@@ -1,0 +1,23 @@
+image: python:3.13
+
+pipelines:
+  pull-requests:
+    "**":
+      - step:
+          image: python:3.13
+          name: lint and format backend
+          script:
+            # Check linting and formatting
+            - python -m venv .venv
+            - source .venv/bin/activate
+            - pip install ruff==0.15.17
+            - python check.py fmt lint
+
+            # Push formatting changes (if any)
+            - |
+              if [ -n "$(git status --porcelain)" ]; then
+                git add .
+                git commit -m "[skip ci] Ruff formatting"
+                git push
+                echo "Pushed formatting changes"
+              fi

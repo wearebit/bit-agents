@@ -1,0 +1,15 @@
+# Per-repo ruff config. The canonical ruleset lives in linting/ruff.toml
+# (vendored in-repo so this repo is self-contained). This file extends it and
+# carries only this repo's exceptions.
+extend = "linting/ruff.toml"
+
+# Trees that aren't ours to lint. Add this repo's vendored deps / generated
+# code here (e.g. "vendor", "third_party", "build").
+extend-exclude = ["__pycache__", "._*", "linting", ".agents", ".claude"]
+
+# Grandfathered backlog goes here when adopting the standard on an existing
+# codebase: waive the invasive/structural rules on files that already violate
+# them, so the gate is strict for NEW code without refactoring working code.
+# New files stay fully enforced; clean an entry up when you next touch the file.
+# [lint.per-file-ignores]
+# "path/to/legacy.py" = ["PLR0915", "PLR0913"]
