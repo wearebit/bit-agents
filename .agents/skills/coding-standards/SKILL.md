@@ -2,21 +2,8 @@
 name: coding-standards
 description: >-
   Coding standards and quality rules for writing or editing code in any language.
-  Its primary goal is one coherent codebase: every change integrates into the
-  existing structure (reuse, relocate, restructure) instead of bolting new code
-  on top. Enforces small single-purpose functions (~50 lines), small files (~250
-  lines, split via subfolders), clear descriptive names, complete docstrings,
-  file-level docstrings, specific try/catch error handling, classes for stateful
-  logic, comments on non-obvious decisions, named constants over magic numbers,
-  and DRY (reuse existing functions instead of duplicating), and it flags
-  AI-slop patterns (over-engineering, verbose comments,
-  phantom error handling). Use this skill whenever writing new code, editing or
-  refactoring existing code — even if they
-  don't explicitly ask for a "standard." Apply it proactively to any code you
-  produce, and flag violations you encounter with a concrete suggested fix. Also
-  use it to set up automated enforcement — it bundles tuned ruff/ESLint configs,
-  a pre-commit config, and a line-limit checker — so use it whenever someone
-  wants to add a linter, pre-commit hook, or CI check for code quality.
+  Always use this skill when writing new code or modifying existing code. It
+  might also be used for requests requiring an understanding of coding standards.
 ---
 
 # Coding Standards
@@ -63,9 +50,9 @@ touch?**
   adding parallel ones. A new file/util/abstraction is the last resort.
 
 **Guardrail — don't over-abstract.** Build for a *present* need, never
-speculative generality (YAGNI). 
-Good abstractions are discovered, not
-forced.
+speculative generality (YAGNI).
+
+Good abstractions are discovered, not forced.
 
 ### 2. Small, single-purpose functions (~50 lines)
 
@@ -118,7 +105,8 @@ convention.
 Every function gets a docstring with: **what** it does (one line), **inputs**
 (each arg, type, meaning), **how** it works (high-level approach, not
 line-by-line — so it won't rot), and **output** (return type + shape). The "how"
-is what makes it more than a signature restatement. Use the examples as the template for all docstrings, and keep them up to date — a stale docstring is worse than none.
+is what makes it more than a signature restatement. Use the examples as the template
+for all docstrings, and keep them up to date — a stale docstring is worse than none.
 
 The three sections are **machine-checked** (see Enforcement), so mind exactly
 when each is required — a blank line must precede each `How:`/`Returns:` header
@@ -255,7 +243,7 @@ A linter owns the mechanical rules (line counts, naming casing, docstring
 *presence*, param counts, magic values, broad excepts); your judgment owns the
 rest (single responsibility, meaningful names, abstraction, integration/DRY).
 Docstring **section presence** (rule 6's `Args:`/`How:`/`Returns:`, with the no-arg
-and void-return exemptions) is now machine-checked too — by `check.py`, since no
+and void-return exemptions) is machine-checked too — by `check.py`, since no
 off-the-shelf linter checks the custom `How:` section or gates sections on the
 signature. Your judgment still owns docstring *content* — whether the "how" is
 accurate and the args are meaningfully described, not just present. Tooling is
