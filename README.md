@@ -4,7 +4,7 @@
 
   <h1>Bit Agents</h1>
 
-  <p><b>One set of agent instructions and one coding-standards gate, shared by every coding agent.</b></p>
+  <p><b>One set of agent instructions and one shared coding-standard for all agents.</b></p>
 
   <a href="https://wearebit.com/"><img src="https://img.shields.io/badge/Homepage-wearebit.com-efb017" alt="Homepage"></a>
   &nbsp;
@@ -20,8 +20,8 @@
 ## Overview
 
 An **agent-agnostic** starter repo. It ships one canonical set of agent
-instructions + a self-contained coding-standards gate, so Claude, Codex, Gemini,
-and Copilot all follow the same rules with no per-tool restating.
+instructions + a self-contained coding-standards gate, so Claude, Codex and Gemini 
+all follow the same rules with no per-tool restating.
 
 ## Start a new project from this skeleton
 
