@@ -39,3 +39,16 @@ Code quality is enforced at the agent level and the **git layer**, so it holds r
   exceptions. Full rules: `.agents/skills/coding-standards/SKILL.md`.
 
 Do not bypass the hooks (`--no-verify`) to land code that violates the standard. Do not skip the workflow for "quick" changes — treat every request as a story to clarify and plan.
+
+## Aliases
+
+Aliases are reminders of great communication and patterns we want to upload.
+
+When you see these exact aliases, expand them and act as if their expansions were given to you directly.
+
+If these are referenced in a longer string, they are not aliases, do not expand.
+
+scr = `Simplify, compress, and repeat your response.`
+eli = `Explain this like I'm 18. Simplify your language. Shorten your response.`
+foc = `Focus on what matters most here. Whats the true signal? Whats the true value? Boil your response down into the most important thing we need to focus on.`
+ref = `Rewrite your responses with reference points`
