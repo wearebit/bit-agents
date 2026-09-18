@@ -11,6 +11,8 @@
   <a href="https://agentskills.io"><img src="https://img.shields.io/badge/Spec-Agent%20Skills-efb017" alt="Agent Skills spec"></a>
   &nbsp;
   <img src="https://img.shields.io/badge/Agents-Claude%20%7C%20Codex%20%7C%20Gemini%20%7C%20Copilot-007ec6" alt="Supported agents">
+  &nbsp;
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-007ec6" alt="License: MIT"></a>
 
   <a href="https://github.com/astral-sh/ruff"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json" alt="Ruff"></a>
   &nbsp;
