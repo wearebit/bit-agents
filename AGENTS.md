@@ -49,6 +49,9 @@ When you see these exact aliases, expand them and act as if their expansions wer
 If these are referenced in a longer string, they are not aliases, do not expand.
 
 scr = `Simplify, compress, and repeat your response.`
+
 eli = `Explain this like I'm 18. Simplify your language. Shorten your response.`
+
 foc = `Focus on what matters most here. Whats the true signal? Whats the true value? Boil your response down into the most important thing we need to focus on.`
+
 ref = `Rewrite your responses with reference points`
